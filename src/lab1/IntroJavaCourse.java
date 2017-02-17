@@ -10,20 +10,35 @@ import javax.swing.JOptionPane;
  */
 public class IntroJavaCourse extends ProgrammingCourse {
 
-    private  String courseName = "Intro Java Course";
+    private String courseName;
+    private String prerequisites;
+
+    public String getPrerequisites() {
+        return prerequisites;
+    }
+
+    public void setPrerequisites(String prerequisites) {
+        this.prerequisites = prerequisites;
+    }
 
     @Override
     public String getCourseName() {
         return courseName;
     }
-    
+
     @Override
     public String declareCoursePrerequisites() {
-         return "Intro To Java icin gerekli olan"; //To change body of generated methods, choose Tools | Templates.
+        if (prerequisites == null || prerequisites.isEmpty()) {
+            JOptionPane.showMessageDialog(null,
+                    "Error: prerequisites cannot be null of empty string");
+            System.exit(0);
+        }
+        return "Needs for Intro Java Course are ....";
+
     }
-    
-     public final void setCourseName(String courseName) {
-        if(courseName == null || courseName.length() == 0) {
+
+    public final void setCourseName(String courseName) {
+        if (courseName == null || courseName.length() == 0) {
             JOptionPane.showMessageDialog(null,
                     "Error: courseName cannot be null of empty string");
             System.exit(0);
@@ -70,7 +85,4 @@ public class IntroJavaCourse extends ProgrammingCourse {
 //        }
 //        this.setCredits(credits);
 //    }
-
-    
-
 }

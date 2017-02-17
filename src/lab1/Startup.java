@@ -10,14 +10,13 @@ public class Startup {
         IntroToProgrammingCourse prg = new IntroToProgrammingCourse();
 
         AdvancedJavaCourse adv = new AdvancedJavaCourse();
-        
+
         IntroJavaCourse intJava = new IntroJavaCourse();
+
+        College col = new College();
         
-        College col =new College(prg);
-        prg.setCourseNum("123445");
-        System.out.println(adv.getCourseName()+" "+prg.getCourseName()+" "+intJava.getCourseName());
-        System.out.println(adv.getCourseName()+prg.getCourseName()+prg.declareCoursePrerequisites());
-        System.out.println(prg.getCourseNum());
+        intJava.declareCoursePrerequisites();
+        System.out.println(intJava.getPrerequisites());
         
     }
 }

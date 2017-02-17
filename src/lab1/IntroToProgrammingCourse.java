@@ -3,28 +3,43 @@ package lab1;
 import javax.swing.JOptionPane;
 
 /**
- * Describe responsibilities here. NOTE: this class has NO PREREQUISITES!
- * Do not change this fact.
+ * Describe responsibilities here. NOTE: this class has NO PREREQUISITES! Do not
+ * change this fact.
  *
- * @author      your name goes here
- * @version     1.00
+ * @author your name goes here
+ * @version 1.00
  */
 public class IntroToProgrammingCourse extends ProgrammingCourse {
-     private String courseName = "Intro To Programming Course";
-     
-     @Override
+
+    private String courseName;
+    private String prerequisites;
+
+    public String getPrerequisites() {
+        return prerequisites;
+    }
+
+    public void setPrerequisites(String prerequisites) {
+
+        this.prerequisites = prerequisites;
+    }
+
+    @Override
     public String getCourseName() {
         return courseName;
     }
-    
+
     @Override
     public String declareCoursePrerequisites() {
-        
-        return "Intro To Programming icin gerekli olan"; //To change body of generated methods, choose Tools | Templates.
+        if (prerequisites == null || prerequisites.isEmpty()) {
+            JOptionPane.showMessageDialog(null,
+                    "Error: prerequisites cannot be null of empty string");
+            System.exit(0);
+        }
+        return "Needs for Intro To Programming Course are ....";
     }
-    
-     public final void setCourseName(String courseName) {
-        if(courseName == null || courseName.length() == 0) {
+
+    public final void setCourseName(String courseName) {
+        if (courseName == null || courseName.length() == 0) {
             JOptionPane.showMessageDialog(null,
                     "Error: courseName cannot be null of empty string");
             System.exit(0);
@@ -32,13 +47,10 @@ public class IntroToProgrammingCourse extends ProgrammingCourse {
         this.courseName = courseName;
     }
 
-    
-
 //    public IntroToProgrammingCourse(String courseName, String courseNumber) {
 //        this.setCourseName(courseName);
 //        this.setCourseNumber(courseNumber);
 //    }
-
 //    public String getCourseNumber() {
 //        return courseNumber;
 //    }
@@ -65,11 +77,4 @@ public class IntroToProgrammingCourse extends ProgrammingCourse {
 //        this.credits = credits;
 //    }
 //
-
-   
-    
-
-    
-
-    
 }

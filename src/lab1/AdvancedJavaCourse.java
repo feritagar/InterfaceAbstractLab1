@@ -10,7 +10,18 @@ import javax.swing.JOptionPane;
  */
 public class AdvancedJavaCourse extends ProgrammingCourse {
 
-    private String courseName = "Advanced Java Course";
+    private String courseName;
+    private String prerequisites;
+
+    public String getPrerequisites() {
+        return prerequisites;
+    }
+
+    public void setPrerequisites(String prerequisites) {
+        this.prerequisites = prerequisites;
+    }
+    
+    
 
     @Override
     public String getCourseName() {
@@ -19,7 +30,12 @@ public class AdvancedJavaCourse extends ProgrammingCourse {
     
      @Override
     public String declareCoursePrerequisites() {
-        return "Advanced Java icin gerekli olan"; //To change body of generated methods, choose Tools | Templates.
+       if(prerequisites == null || prerequisites.isEmpty()){
+           JOptionPane.showMessageDialog(null,
+                    "Error: prerequisites cannot be null of empty string");
+            System.exit(0);
+       }
+        return "Needs for Advanced Java Course are ...."; 
     }
     
      public final void setCourseName(String courseName) {
