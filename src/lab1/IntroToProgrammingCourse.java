@@ -10,7 +10,7 @@ import javax.swing.JOptionPane;
  * @version     1.00
  */
 public class IntroToProgrammingCourse extends ProgrammingCourse {
-     public final String courseName = "Intro To Programming Course";
+     private String courseName = "Intro To Programming Course";
      
      @Override
     public String getCourseName() {
@@ -19,13 +19,21 @@ public class IntroToProgrammingCourse extends ProgrammingCourse {
     
     @Override
     public String declareCoursePrerequisites() {
+        
         return "Intro To Programming icin gerekli olan"; //To change body of generated methods, choose Tools | Templates.
     }
     
-//    private String courseName;
-//    String courseNumber;
-//    private double credits;
-//
+     public final void setCourseName(String courseName) {
+        if(courseName == null || courseName.length() == 0) {
+            JOptionPane.showMessageDialog(null,
+                    "Error: courseName cannot be null of empty string");
+            System.exit(0);
+        }
+        this.courseName = courseName;
+    }
+
+    
+
 //    public IntroToProgrammingCourse(String courseName, String courseNumber) {
 //        this.setCourseName(courseName);
 //        this.setCourseNumber(courseNumber);
@@ -57,19 +65,8 @@ public class IntroToProgrammingCourse extends ProgrammingCourse {
 //        this.credits = credits;
 //    }
 //
-//    public String getCourseName() {
-//        return courseName;
-//    }
-//
-//    public final void setCourseName(String courseName) {
-//        if(courseName == null || courseName.length() == 0) {
-//            JOptionPane.showMessageDialog(null,
-//                    "Error: courseName cannot be null of empty string");
-//            System.exit(0);
-//        }
-//        this.courseName = courseName;
-//    }
 
+   
     
 
     

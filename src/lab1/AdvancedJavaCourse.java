@@ -10,7 +10,7 @@ import javax.swing.JOptionPane;
  */
 public class AdvancedJavaCourse extends ProgrammingCourse {
 
-    public final String courseName = "Advanced Java Course";
+    private String courseName = "Advanced Java Course";
 
     @Override
     public String getCourseName() {
@@ -21,6 +21,16 @@ public class AdvancedJavaCourse extends ProgrammingCourse {
     public String declareCoursePrerequisites() {
         return "Advanced Java icin gerekli olan"; //To change body of generated methods, choose Tools | Templates.
     }
+    
+     public final void setCourseName(String courseName) {
+        if(courseName == null || courseName.length() == 0) {
+            JOptionPane.showMessageDialog(null,
+                    "Error: courseName cannot be null of empty string");
+            System.exit(0);
+        }
+        this.courseName = courseName;
+    }
+
 //    String courseName;
 //    private String courseNumber;
 //    private double credits;

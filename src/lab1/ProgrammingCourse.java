@@ -10,7 +10,7 @@ package lab1;
  * @author FA
  */
 public abstract class ProgrammingCourse {
-
+    // common properties
     private String courseName;
     private String courseNum;
     private int credits;
@@ -21,7 +21,9 @@ public abstract class ProgrammingCourse {
         return courseName + " " + courseNum + " " + credits;
 
     }
+    //common method
     public abstract String declareCoursePrerequisites();
+    
 
     public String getCourseName() {
         return courseName;

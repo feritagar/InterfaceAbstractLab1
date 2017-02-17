@@ -18,5 +18,6 @@ public class Startup {
         System.out.println(adv.getCourseName()+" "+prg.getCourseName()+" "+intJava.getCourseName());
         System.out.println(adv.getCourseName()+prg.getCourseName()+prg.declareCoursePrerequisites());
         System.out.println(prg.getCourseNum());
+        
     }
 }

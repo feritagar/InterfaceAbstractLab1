@@ -1,5 +1,7 @@
 package lab1;
 
+import javax.swing.JOptionPane;
+
 /**
  * Describe responsibilities here.
  *
@@ -8,7 +10,7 @@ package lab1;
  */
 public class IntroJavaCourse extends ProgrammingCourse {
 
-    public final String courseName = "Intro Java Course";
+    private  String courseName = "Intro Java Course";
 
     @Override
     public String getCourseName() {
@@ -19,6 +21,16 @@ public class IntroJavaCourse extends ProgrammingCourse {
     public String declareCoursePrerequisites() {
          return "Intro To Java icin gerekli olan"; //To change body of generated methods, choose Tools | Templates.
     }
+    
+     public final void setCourseName(String courseName) {
+        if(courseName == null || courseName.length() == 0) {
+            JOptionPane.showMessageDialog(null,
+                    "Error: courseName cannot be null of empty string");
+            System.exit(0);
+        }
+        this.courseName = courseName;
+    }
+
 //    String courseName;
 //    private String courseNumber;
 //    double credits;
